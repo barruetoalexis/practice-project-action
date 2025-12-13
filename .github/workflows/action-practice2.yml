@@ -11,6 +11,6 @@ jobs:
           echo "Information Issue"
           echo "${{ github.event.issue.number }}. ${{ github.event.issue.title }}"
           echo "${{ github.event.action }}"
-          echo "${{ toJson(github.event.changes) }}"
+          echo "${{ github.event.issue.body }}"
           
       
