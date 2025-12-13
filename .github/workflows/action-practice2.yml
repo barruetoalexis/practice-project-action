@@ -1,7 +1,5 @@
 name: Trigger Issues
-on:
-  issues:
-    types: [opened, edited, deleted]
+on: issues
 jobs:
   output:
     runs-on: ubuntu-latest
@@ -9,8 +7,6 @@ jobs:
       - name: Echo issue information
         run: |
           echo "Information Issue"
-          echo "${{ github.event.issue.number }}. ${{ github.event.issue.title }}"
-          echo "${{ github.event.action }}"
-          echo "${{ github.event.issue.body }}"
+          echo "${{ toJson(github.event) }}
           
       
